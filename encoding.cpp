@@ -1,8 +1,13 @@
 #include "encoding.h"
+#include <QString>
 
 Encoding::Encoding()
 {
 
+}
+
+Encoding::~Encoding(){
+    delete[] encodingArrInp;
 }
 
 void Encoding::encode(){
@@ -24,7 +29,7 @@ void Encoding::encode(){
         encondingOutputStr.append(encodingArr[i]);
     }
 
-//    encondingOutput = QString::fromStdString(encondingOutputStr);
+    encondingOutput = QString::fromStdString(encondingOutputStr);
 
     QString newCheckMessage;
     newCheckMessage.append(checkMessage);
@@ -34,9 +39,10 @@ void Encoding::encode(){
 
 
 
-    for(int i = 0; i < newCheckMessageStr.length(); i++){
+    for(int i = 0; i < newCheckMessage.length(); i++){
         if(encondingOutput[i] != 'a'){
             newCheckMessageStr[i] = tolower(newCheckMessageStr[i]);
+
         }else if(encondingOutput[i] == 'a'){
             newCheckMessageStr[i] = toupper(newCheckMessageStr[i]);
         }
@@ -56,7 +62,7 @@ void Encoding::encode(){
     }
 
 
-    encondingOutput = QString::fromStdString(newCheckMessageStr);
+     encondingOutput = QString::fromStdString(newCheckMessageStr);
 }
 
 QString Encoding::getInput(){return input;}
@@ -106,3 +112,11 @@ void Encoding::decode(){
 
     decodingOutput = QString::fromStdString(decodingMessage);
 }
+
+void Encoding::encodeClear(){encondingOutput.clear();}
+
+void Encoding::decodeClear(){decodingOutput.clear();}
+
+QString Encoding::getDecode(){return decodingOutput;}
+
+QString Encoding::getEncode(){return encondingOutput;}

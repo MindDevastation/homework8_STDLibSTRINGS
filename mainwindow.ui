@@ -14,67 +14,48 @@
    <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QPushButton" name="Check">
-    <property name="geometry">
-     <rect>
-      <x>140</x>
-      <y>150</y>
-      <width>80</width>
-      <height>24</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Encode</string>
-    </property>
-   </widget>
-   <widget class="QLineEdit" name="InputText">
-    <property name="geometry">
-     <rect>
-      <x>132</x>
-      <y>110</y>
-      <width>251</width>
-      <height>24</height>
-     </rect>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label">
-    <property name="geometry">
-     <rect>
-      <x>90</x>
-      <y>220</y>
-      <width>501</width>
-      <height>20</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Encoded Text:</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="Enter">
-    <property name="geometry">
-     <rect>
-      <x>290</x>
-      <y>150</y>
-      <width>80</width>
-      <height>24</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Decode</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label_2">
+   <widget class="QWidget" name="">
     <property name="geometry">
      <rect>
       <x>80</x>
-      <y>280</y>
-      <width>501</width>
-      <height>20</height>
+      <y>110</y>
+      <width>431</width>
+      <height>100</height>
      </rect>
     </property>
-    <property name="text">
-     <string>Decoded Text: </string>
-    </property>
+    <layout class="QGridLayout" name="gridLayout">
+     <item row="0" column="0" colspan="2">
+      <widget class="QLineEdit" name="InputText"/>
+     </item>
+     <item row="1" column="0">
+      <widget class="QPushButton" name="Check">
+       <property name="text">
+        <string>Encode</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="1">
+      <widget class="QPushButton" name="Enter">
+       <property name="text">
+        <string>Decode</string>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="0" colspan="2">
+      <widget class="QLabel" name="label">
+       <property name="text">
+        <string>Encoded Text:</string>
+       </property>
+      </widget>
+     </item>
+     <item row="3" column="0" colspan="2">
+      <widget class="QLabel" name="label_2">
+       <property name="text">
+        <string>Decoded Text: </string>
+       </property>
+      </widget>
+     </item>
+    </layout>
    </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">

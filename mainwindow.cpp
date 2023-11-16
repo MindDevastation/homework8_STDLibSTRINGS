@@ -22,7 +22,7 @@ void MainWindow::on_Check_clicked()
     this->encode.setInput(inp);
 
     this->encode.encode();
-    ui->label->setText("Encoded Text: " + this->encode.encondingOutput);
+    ui->label->setText("Encoded Text: " + this->encode.getEncode());
 
     ui->Enter->setEnabled(true);
 }
@@ -33,6 +33,8 @@ void MainWindow::on_Check_clicked()
 void MainWindow::on_Enter_clicked()
 {
     this->encode.decode();
-    ui->label_2->setText("Decoded Text: " + this->encode.decodingOutput);
+    ui->label_2->setText("Decoded Text: " + this->encode.getDecode());
+    this->encode.decodeClear();
+    this->encode.encodeClear();
 }
 
